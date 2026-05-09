@@ -3,7 +3,7 @@
 A youth-led classroom project on teen mental health by Kaylee.
 
 ## Pages
-
+https://kayleematicking.github.io/the-quiet-struggle/
 - **Home** (`index.html`)
 - **Editor's Note** (`editors-note.html`)
 - **Flash Memoir** — *My Struggle with Mental Health* (`flash-memoir.html`)
@@ -18,7 +18,7 @@ A youth-led classroom project on teen mental health by Kaylee.
 python3 -m http.server 8000
 ```
 
-Then visit <http://localhost:8000/>.
+Then visit [<http://localhost:8000/>](https://kayleematicking.github.io/the-quiet-struggle/).
 
 ## Tech
 
