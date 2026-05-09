@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Do We Know? &mdash; Teen Mental Health</title>
+  <meta name="description" content="The facts about teens and mental health, drawn from the CDC and other trusted sources.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__row">
+      <a class="brand" href="index.html" aria-label="Teen Mental Health, home">
+        <svg class="brand__mark" viewBox="0 0 36 36" aria-hidden="true">
+          <path d="M7 19 C 8 11, 16 7, 22 9 C 28 11, 30 18, 26 24 C 22 30, 11 29, 7 19 Z" fill="#7A8857" opacity="0.85"/>
+          <circle cx="22" cy="20" r="7" fill="#C97B5C" opacity="0.9"/>
+          <path d="M14 16 q 4 -3 8 0" stroke="#FAF5EA" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="brand__word">Teen Mental Health</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="editors-note.html">Editor&rsquo;s Note</a></li>
+          <li><a class="nav__link" href="flash-memoir.html">Flash Memoir</a></li>
+          <li><a class="nav__link" href="information-effect.html" aria-current="page">Information Effect</a></li>
+          <li><a class="nav__link" href="persuasion-effect.html">Persuasion Effect</a></li>
+          <li><a class="nav__link" href="resources.html">Resources</a></li>
+          <li><a class="nav__link" href="sources.html">Sources</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menuOpen" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" data-open="false" aria-hidden="true">
+    <div class="container">
+      <div class="mobile-menu__top">
+        <span class="brand__word">Teen Mental Health</span>
+        <button class="menu-toggle" id="menuClose" aria-label="Close menu">Close</button>
+      </div>
+      <ul class="mobile-menu__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="editors-note.html">Editor&rsquo;s Note</a></li>
+        <li><a href="flash-memoir.html">Flash Memoir</a></li>
+        <li><a href="information-effect.html" aria-current="page">Information Effect</a></li>
+        <li><a href="persuasion-effect.html">Persuasion Effect</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="sources.html">Sources</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="crisis-bar" role="region" aria-label="Crisis support">
+      <div class="crisis-bar__inner">
+        <svg class="crisis-bar__icon" viewBox="0 0 28 28" aria-hidden="true">
+          <path d="M14 4 C 11 8, 11 11, 14 14 C 17 11, 17 8, 14 4 Z" fill="#7A8857"/>
+          <path d="M6 18 C 9 14, 12 14, 14 17 C 16 14, 19 14, 22 18 C 19 22, 16 22, 14 20 C 12 22, 9 22, 6 18 Z" fill="#7A8857" opacity="0.85"/>
+          <path d="M14 14 v 10" stroke="#5E6B3F" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        <p>If you need to talk, you&rsquo;re not alone. Call or text <strong>988</strong> anytime &mdash; free, confidential, 24/7. <a href="https://988lifeline.org" rel="noopener">988lifeline.org</a></p>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" class="article">
+    <div class="container">
+      <article class="article__inner">
+
+        <svg class="article__sprig" viewBox="0 0 38 38" aria-hidden="true">
+          <circle cx="19" cy="19" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M19 4 v 4 M19 30 v 4 M4 19 h 4 M30 19 h 4 M8 8 l 3 3 M27 27 l 3 3 M8 30 l 3 -3 M27 11 l 3 -3"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+
+        <p class="eyebrow">Information effect &middot; Issue One</p>
+        <h1 class="article__title">What Do We Know?</h1>
+        <p class="article__byline">By Kaylee &middot; Spring 2026</p>
+
+        <div class="fan" id="infoFan" data-active="1">
+          <button class="fan__swap" type="button" id="fanSwap" aria-controls="infoFan" aria-label="Swap which page is on top">
+            <svg viewBox="0 0 28 28" aria-hidden="true">
+              <path d="M5 10 h 16 l -4 -4 M21 18 h -16 l 4 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Click to swap pages</span>
+          </button>
+          <button class="fan__card fan__card--1" type="button" data-fan-card="1" aria-label="Show page 1 on top">
+            <img src="img/information-effect-1.jpg" alt="Information effect, page 1: facts about teen mental health">
+          </button>
+          <button class="fan__card fan__card--2" type="button" data-fan-card="2" aria-label="Show page 2 on top">
+            <img src="img/information-effect-2.jpg" alt="Information effect, page 2: facts about teen mental health">
+          </button>
+        </div>
+
+        <p class="article__nextlink">
+          Sources cited on the <a href="sources.html">Sources page</a>. For warning signs and how to help, read <a href="persuasion-effect.html">How Can We Help?</a>
+        </p>
+
+        <script>
+          (function () {
+            var fan = document.getElementById('infoFan');
+            var swap = document.getElementById('fanSwap');
+            if (!fan || !swap) return;
+            function toggle() {
+              fan.dataset.active = fan.dataset.active === '1' ? '2' : '1';
+            }
+            swap.addEventListener('click', toggle);
+            fan.querySelectorAll('[data-fan-card]').forEach(function (el) {
+              el.addEventListener('click', function (e) {
+                if (e.target.closest('.fan__swap')) return;
+                toggle();
+              });
+            });
+          })();
+        </script>
+
+        <a class="back-link" href="index.html">&larr; Back to home</a>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 28" preserveAspectRatio="none">
+        <path d="M0 14 Q 75 4 150 14 T 300 14 T 450 14 T 600 14 T 750 14 T 900 14 T 1050 14 T 1200 14"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="container site-footer__inner">
+      <div class="site-footer__left">
+        <svg class="brand__mark" viewBox="0 0 36 36" aria-hidden="true">
+          <path d="M7 19 C 8 11, 16 7, 22 9 C 28 11, 30 18, 26 24 C 22 30, 11 29, 7 19 Z" fill="#7A8857" opacity="0.85"/>
+          <circle cx="22" cy="20" r="7" fill="#C97B5C" opacity="0.9"/>
+        </svg>
+        <span>Teen Mental Health &middot; A classroom project &middot; Spring 2026</span>
+      </div>
+      <ul class="site-footer__nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="sources.html">Sources</a></li>
+      </ul>
+      <p class="site-footer__note">If today feels heavy, 988 is here for you.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var open = document.getElementById('menuOpen');
+      var close = document.getElementById('menuClose');
+      var menu = document.getElementById('mobileMenu');
+      if (!open || !close || !menu) return;
+      function setOpen(state) {
+        menu.dataset.open = state ? 'true' : 'false';
+        menu.setAttribute('aria-hidden', state ? 'false' : 'true');
+        open.setAttribute('aria-expanded', state ? 'true' : 'false');
+        document.body.style.overflow = state ? 'hidden' : '';
+      }
+      open.addEventListener('click', function () { setOpen(true); });
+      close.addEventListener('click', function () { setOpen(false); });
+      menu.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') setOpen(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setOpen(false);
+      });
+    })();
+  </script>
+</body>
+</html>
