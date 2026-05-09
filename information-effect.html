@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
@@ -108,8 +109,15 @@
             var fan = document.getElementById('infoFan');
             var swap = document.getElementById('fanSwap');
             if (!fan || !swap) return;
+            var shuffleTimer = null;
             function toggle() {
+              if (fan.classList.contains('is-shuffling')) return;
+              fan.classList.add('is-shuffling');
               fan.dataset.active = fan.dataset.active === '1' ? '2' : '1';
+              window.clearTimeout(shuffleTimer);
+              shuffleTimer = window.setTimeout(function () {
+                fan.classList.remove('is-shuffling');
+              }, 1150);
             }
             swap.addEventListener('click', toggle);
             fan.querySelectorAll('[data-fan-card]').forEach(function (el) {

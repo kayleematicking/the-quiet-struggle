@@ -748,9 +748,14 @@ p { margin: 0 0 1.1em; }
   box-shadow: 0 14px 32px rgba(95, 62, 40, 0.18);
   cursor: pointer;
   overflow: hidden;
-  transition: transform 420ms cubic-bezier(0.4, 0.1, 0.3, 1.1), box-shadow 280ms ease, z-index 0ms 220ms;
+  transition:
+    transform 1100ms cubic-bezier(0.65, 0.05, 0.36, 1),
+    box-shadow 600ms ease,
+    z-index 0ms 550ms;
   font: inherit;
   color: inherit;
+  transform-origin: 50% 60%;
+  will-change: transform;
 }
 .fan__card img {
   display: block;
@@ -773,11 +778,49 @@ p { margin: 0 0 1.1em; }
   margin-left: auto;
   transform: rotate(5deg) translateX(8%);
 }
-.fan[data-active="1"] .fan__card--1 { z-index: 3; transform: rotate(-2deg) translateX(-2%); }
-.fan[data-active="1"] .fan__card--2 { z-index: 2; transform: rotate(7deg) translateX(15%); }
-.fan[data-active="2"] .fan__card--1 { z-index: 2; transform: rotate(-7deg) translateX(-15%); }
-.fan[data-active="2"] .fan__card--2 { z-index: 3; transform: rotate(2deg) translateX(2%); }
-.fan__card:hover { box-shadow: 0 18px 40px rgba(95, 62, 40, 0.24); }
+/* Resting positions: front card is centered & nearly upright,
+   back card sits behind with a wider tilt and offset. */
+.fan[data-active="1"] .fan__card--1 {
+  z-index: 3;
+  transform: rotate(-2deg) translateX(-2%) translateY(0);
+}
+.fan[data-active="1"] .fan__card--2 {
+  z-index: 2;
+  transform: rotate(11deg) translateX(22%) translateY(8px) scale(0.965);
+}
+.fan[data-active="2"] .fan__card--1 {
+  z-index: 2;
+  transform: rotate(-11deg) translateX(-22%) translateY(8px) scale(0.965);
+}
+.fan[data-active="2"] .fan__card--2 {
+  z-index: 3;
+  transform: rotate(2deg) translateX(2%) translateY(0);
+}
+/* Mid-shuffle "lift" while a card is moving — the active card briefly
+   floats up before settling into the front position. */
+.fan.is-shuffling .fan__card {
+  transition:
+    transform 1100ms cubic-bezier(0.65, 0.05, 0.36, 1),
+    box-shadow 600ms ease,
+    z-index 0ms 550ms;
+}
+.fan.is-shuffling .fan__card--1,
+.fan.is-shuffling .fan__card--2 {
+  animation: fan-lift 1100ms cubic-bezier(0.45, 0, 0.55, 1) both;
+}
+@keyframes fan-lift {
+  0%   { box-shadow: 0 14px 32px rgba(95, 62, 40, 0.18); }
+  35%  { box-shadow: 0 28px 60px rgba(95, 62, 40, 0.34); }
+  100% { box-shadow: 0 14px 32px rgba(95, 62, 40, 0.18); }
+}
+.fan__card:hover { box-shadow: 0 22px 48px rgba(95, 62, 40, 0.28); }
+@media (prefers-reduced-motion: reduce) {
+  .fan__card,
+  .fan.is-shuffling .fan__card {
+    transition: transform 0.001ms, box-shadow 0.001ms;
+    animation: none;
+  }
+}
 
 .fan__swap {
   position: absolute;
@@ -815,9 +858,6 @@ p { margin: 0 0 1.1em; }
   width: 22px;
   height: 22px;
   flex: 0 0 auto;
-}
-@media (prefers-reduced-motion: reduce) {
-  .fan__card { transition: none; }
 }
 @media (max-width: 700px) {
   .fan { padding-bottom: 70px; }
