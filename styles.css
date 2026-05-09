@@ -796,53 +796,25 @@ p { margin: 0 0 1.1em; }
   z-index: 3;
   transform: rotate(2deg) translateX(2%) translateY(0);
 }
-/* During a swap, the incoming card slides in from off-screen right
-   and lands on top. The outgoing card just transitions to its back
-   position underneath. */
+/* During a swap, the incoming card slides in from the right and
+   lands on top. Subtle — no overshoot, no scale, no shadow flare. */
 .fan.is-shuffling[data-active="1"] .fan__card--1,
 .fan.is-shuffling[data-active="2"] .fan__card--2 {
   z-index: 4;
-  animation: fan-slide-in 1100ms cubic-bezier(0.22, 0.7, 0.32, 1) both;
 }
 .fan.is-shuffling[data-active="1"] .fan__card--1 {
-  animation-name: fan-slide-to-1;
+  animation: fan-slide-to-1 700ms cubic-bezier(0.33, 0.1, 0.25, 1) both;
 }
 .fan.is-shuffling[data-active="2"] .fan__card--2 {
-  animation-name: fan-slide-to-2;
-}
-.fan.is-shuffling[data-active="1"] .fan__card--2,
-.fan.is-shuffling[data-active="2"] .fan__card--1 {
-  transition:
-    transform 950ms cubic-bezier(0.45, 0.05, 0.5, 0.95) 80ms,
-    box-shadow 600ms ease;
+  animation: fan-slide-to-2 700ms cubic-bezier(0.33, 0.1, 0.25, 1) both;
 }
 @keyframes fan-slide-to-1 {
-  0% {
-    transform: translateX(135%) rotate(10deg) scale(0.92);
-    box-shadow: 0 24px 48px rgba(95, 62, 40, 0.30);
-  }
-  60% {
-    transform: translateX(10%) rotate(3deg) scale(1.005);
-    box-shadow: 0 30px 60px rgba(95, 62, 40, 0.32);
-  }
-  100% {
-    transform: rotate(-2deg) translateX(-2%);
-    box-shadow: 0 14px 32px rgba(95, 62, 40, 0.18);
-  }
+  0%   { transform: translateX(35%) rotate(4deg); }
+  100% { transform: rotate(-2deg) translateX(-2%); }
 }
 @keyframes fan-slide-to-2 {
-  0% {
-    transform: translateX(135%) rotate(10deg) scale(0.92);
-    box-shadow: 0 24px 48px rgba(95, 62, 40, 0.30);
-  }
-  60% {
-    transform: translateX(12%) rotate(5deg) scale(1.005);
-    box-shadow: 0 30px 60px rgba(95, 62, 40, 0.32);
-  }
-  100% {
-    transform: rotate(2deg) translateX(2%);
-    box-shadow: 0 14px 32px rgba(95, 62, 40, 0.18);
-  }
+  0%   { transform: translateX(35%) rotate(6deg); }
+  100% { transform: rotate(2deg) translateX(2%); }
 }
 .fan__card:hover { box-shadow: 0 22px 48px rgba(95, 62, 40, 0.28); }
 @media (prefers-reduced-motion: reduce) {
